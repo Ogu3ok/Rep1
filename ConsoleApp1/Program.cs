@@ -16,4 +16,16 @@
     
         return x / arr.Length;
     }
+
+    public static int Max(int[] arr)
+    {
+        var x = arr[0];
+        for (int i = 1; i < arr.Length; i++)
+        {
+            if (x < arr[i])
+                x = arr[i];
+        }
+
+        return x;
+    }
 }
