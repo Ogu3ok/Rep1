@@ -2,6 +2,7 @@
 {
     public static void Main(string[] args)
     {
+        Console.WriteLine("Hello World");
         //Console.WriteLine(GetAverage(new []{1,2,4,6,6}));
     }
 
