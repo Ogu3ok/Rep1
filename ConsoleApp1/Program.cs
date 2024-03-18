@@ -9,9 +9,9 @@
     public static int GetAverage(int[] arr)
     {
         var x = 0;
-        foreach (var i in arr)
+        foreach (var f in arr)
         {
-            x += i;
+            x += f;
         }
     
         return x / arr.Length;
