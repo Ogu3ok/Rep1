@@ -6,10 +6,10 @@ public class Fridge : ContainerBase
     private double temp;
     private double wymTemp;
 
-    public Fridge(string type, double weight, double height, double kontweight, double depth, double maxCapacity, string product, double temp, double wymTemp) : 
-        base(type, weight, height, kontweight, depth, maxCapacity)
+    public Fridge( double height, double kontweight, double depth, double maxCapacity, string product, double temp, double wymTemp) : 
+        base("Fridge", height, kontweight, depth, maxCapacity)
     {
-        this.id = "KON-G-" + Id++;
+        this.id = "KON-F-" + Id++;
         this.product = product;
         this.temp = temp;
         this.wymTemp = wymTemp;

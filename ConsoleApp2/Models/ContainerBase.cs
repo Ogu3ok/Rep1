@@ -11,10 +11,9 @@ public abstract class ContainerBase
     protected double depth;
     protected double maxCapacity;
 
-    protected ContainerBase(string type, double weight, double height, double kontweight, double depth, double maxCapacity)
+    protected ContainerBase(string type, double height, double kontweight, double depth, double maxCapacity)
     {
         this.type = type;
-        this.weight = weight;
         this.height = height;
         this.kontweight = kontweight;
         this.depth = depth;
@@ -36,11 +35,11 @@ public abstract class ContainerBase
         {
             throw new OverfilException();
         }
-        this.weight += weight;
+        this.weight = weight;
     }
 
     public override string ToString()
     {
-        return $"Kontainer: {id}. Current weight: {weight}\nParams[H:{height}, W:{kontweight}, D:{depth}, C{maxCapacity}]";
+        return $"Kontainer: {id}. Current weight: {weight}\nParams[H:{height}, W:{kontweight}, D:{depth}, C:{maxCapacity}]";
     }
 }
