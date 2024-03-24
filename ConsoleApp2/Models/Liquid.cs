@@ -4,13 +4,34 @@ public class Liquid : ContainerBase, IHazardNotifier
 {
     private string ladunek;
     private bool safe;
-    public Liquid(int weight, int height, int kontweight, int depth, int maxCapacity)
+
+    public Liquid(string type, double weight, double height, double kontweight, double depth, double maxCapacity, string ladunek, bool safe) : 
+        base(type, weight, height, kontweight, depth, maxCapacity)
     {
-        id = "KON-L-" + ContainerBase.Id++;
-        this.weight = weight;
-        this.height = height;
-        this.kontweight = kontweight;
-        this.depth = depth;
-        this.maxCapacity = maxCapacity;
+        this.id = "KON-L-" + Id++;
+        this.ladunek = ladunek;
+        this.safe = safe;
+    }
+
+    public void load(double weight)
+    {
+        if (safe && weight > 0.9 * maxCapacity)
+        {
+            throw new OverfilException();
+        }
+        if (weight > 0.5 * maxCapacity)
+        {
+            throw new OverfilException();
+        }
+        this.weight += weight;
+    }
+    public void notify(string message)
+    {
+        Console.WriteLine("Zauwazona proba wykonania niebiezpiecznej operacji("+id+")");
+    }
+
+    public override string ToString()
+    {
+        return base.ToString()+$"Ladunek: {ladunek}";
     }
 }
