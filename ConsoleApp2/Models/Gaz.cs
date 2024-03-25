@@ -4,7 +4,7 @@ public class Gaz : ContainerBase, IHazardNotifier
 {
     private double cisnienie;
 
-    public Gaz( double height, double kontweight, double depth, double maxCapacity, double cisnienie) :
+    public Gaz(double height, double kontweight, double depth, double maxCapacity, double cisnienie) :
         base("Gaz", height, kontweight, depth, maxCapacity)
     {
         this.cisnienie = cisnienie;
@@ -21,12 +21,11 @@ public class Gaz : ContainerBase, IHazardNotifier
 
     public void notify()
     {
-        
         Console.WriteLine("Niebiezpiczne warunki(" + id + ")");
     }
 
     public override string ToString()
     {
-        return base.ToString()+$"\nCisnienie: {cisnienie}";
+        return base.ToString() + $"\nCisnienie: {cisnienie}";
     }
 }

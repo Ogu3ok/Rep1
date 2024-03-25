@@ -2,7 +2,7 @@
 
 public class Kontenerowca
 {
-    private List<ContainerBase> containers;
+    private IList<ContainerBase> containers;
     private int maxPrzedkosc;
     private int maxNKont;
     private double maxWeight;

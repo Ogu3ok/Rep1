@@ -18,7 +18,6 @@ public abstract class ContainerBase
         this.kontweight = kontweight;
         this.depth = depth;
         this.maxCapacity = maxCapacity;
-        this.id = id;
     }
 
     public double unload()
